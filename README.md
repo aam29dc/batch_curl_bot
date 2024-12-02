@@ -33,3 +33,12 @@ count how many instances of cmd.exe you have running
 This script could be refactored with a function and parameters, but batch scripting isn't very friendly.
 A better scripting language would to be to use .python or .powershell, but this was an attempt to learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.
 It is (mostly) capable (you could write another program to start within batch), but error reporting from batch scripting isn't friendly either.
+
+# words.txt
+use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
+````
+dement
+rumfustian
+tricuspidal
+duodecimal
+````
