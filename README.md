@@ -20,4 +20,5 @@ Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-l
 ...
 ````
 this script could be refactored with a function and parameters, but batch scripting isn't very friendly.
-Also a better scripting language would to be to use .python or .powershell, but this was an attempt to learn the cmd prompt at a higher level.
+Also a better scripting language would to be to use .python or .powershell, but this was an attempt to learn the cmd prompt at a higher level,
+and to learn the capabilities of batch scripting. It is (mostly) capable, but error reporting from batch scripting isn't friendly either.
