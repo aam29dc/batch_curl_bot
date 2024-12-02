@@ -11,6 +11,7 @@ launch 10 instances of search.bat
 ## count.bat
 count how many instances of cmd.exe you have running
 
+### response.log
 ````
 200 1.407508s googlesearch?q=biurate 
 200 0.492720s yahoo 
