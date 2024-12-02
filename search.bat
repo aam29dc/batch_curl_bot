@@ -18,9 +18,18 @@ if not exist "%file%" (
 	echo file
 )
 
-::echo Enable logging to response.log? (Y/N):
-::set /p logging=
-set logging=N
+:getlogging
+echo Enable logging to response.log? (Y/N):
+set /p logging=
+
+if /i "%logging%" == "Y" (
+	echo Logging enabled.
+) else if /i "%logging%" == "N" (
+	echo Logging disabled.
+) else (
+	echo Unrecognized input.
+	goto :getlogging
+) 
 
 :: Check if shuffle.ps1 exists
 if not exist "shuffle.ps1" (
@@ -75,7 +84,7 @@ for /f "delims=" %%a in (%file%) do (
 
 				echo !result!
 				
-				if !logging! == Y (
+				if /i "%logging%" == "Y" (
 					echo !result! >> response.log
 				)
 			)
@@ -91,11 +100,12 @@ for /f "delims=" %%a in (%file%) do (
             set result=!result:.com/=!
 
             echo !result!
-			
-			if !logging! == Y (
+
+				
+			if /i "%logging%" == "Y" (
 				echo !result! >> response.log
 			)
-        )
+	)
 
         :: Update the referer for the next search engine
         set referer="Referer: https://www.google.com/search?q=!search!"
@@ -111,7 +121,7 @@ for /f "delims=" %%a in (%file%) do (
 
 				echo !result!
 				
-				if %logging% == Y (
+				if /i "%logging%" == "Y" (
 					echo !result! >> response.log
 				)
 			)
@@ -128,7 +138,7 @@ for /f "delims=" %%a in (%file%) do (
 
             echo !result!
 			
-			if %logging% == Y (
+			if /i "%logging%" == "Y" (
 				echo !result! >> response.log
 			)
         )
@@ -147,7 +157,7 @@ for /f "delims=" %%a in (%file%) do (
 
 				echo !result!
 				
-				if %logging% == Y (
+				if /i "%logging%" == "Y" (
 					echo !result! >> response.log
 				)
 			)
@@ -164,7 +174,7 @@ for /f "delims=" %%a in (%file%) do (
 
             echo !result!
 			
-			if %logging% == Y (
+			if /i "%logging%" == "Y" (
 				echo !result! >> response.log
 			)
         )
@@ -183,7 +193,7 @@ for /f "delims=" %%a in (%file%) do (
 
 				echo !result!
 				
-				if %logging% == Y (
+				if /i "%logging%" == "Y" (
 					echo !result! >> response.log
 				)
 			)
@@ -200,7 +210,7 @@ for /f "delims=" %%a in (%file%) do (
 
             echo !result!
 			
-			if %logging% == Y (
+			if /i "%logging%" == "Y" (
 				echo !result! >> response.log
 			)
         )
