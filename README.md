@@ -1,3 +1,4 @@
+# batch curl bot
 opens words.txt, shuffles the entries (using a .ps1 script), chooses a random search engine (out of the 4),
 and queries at the homepage. If last search engine is the same, it skips the homepage query.
 Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-limiting features, and check search engine anti-bot features.
