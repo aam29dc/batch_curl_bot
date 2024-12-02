@@ -1,4 +1,4 @@
-````batch
+````
 200 1.407508s googlesearch?q=biurate 
 200 0.492720s yahoo 
 200 1.014760s yahoosearch;?p=sulphostannide&fr=sfp&fr2=sb-top 
