@@ -30,6 +30,6 @@ count how many instances of cmd.exe you have running
 200 1.071123s yahoosearch;?p=scraggiest&fr=sfp&fr2=sb-top 
 ...
 ````
-this script could be refactored with a function and parameters, but batch scripting isn't very friendly.
-Also a better scripting language would to be to use .python or .powershell, but this was an attempt to learn the cmd prompt at a higher level,
-and to learn the capabilities of batch scripting. It is (mostly) capable, but error reporting from batch scripting isn't friendly either.
+This script could be refactored with a function and parameters, but batch scripting isn't very friendly.
+A better scripting language would to be to use .python or .powershell, but this was an attempt to learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.
+It is (mostly) capable (you could write another program to start within batch), but error reporting from batch scripting isn't friendly either.
