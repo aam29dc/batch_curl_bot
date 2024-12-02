@@ -1,4 +1,6 @@
-opens words.txt, shuffles the entries (using a .ps1 script), and starts querying the usual search engines. Attempted to appear as if a real user is browsing, and to self DoS and check ISP rate-limiting features.
+opens words.txt, shuffles the entries (using a .ps1 script), chooses a random search engine (out of the 4),
+and querying at the homepage. If last search engine is the same it skips the homepage query.
+Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-limiting features, and search engine anti-bot features.
 
 ````
 200 1.407508s googlesearch?q=biurate 
@@ -17,3 +19,4 @@ opens words.txt, shuffles the entries (using a .ps1 script), and starts querying
 200 1.071123s yahoosearch;?p=scraggiest&fr=sfp&fr2=sb-top 
 ...
 ````
+this script could be refactored with a function and parameters, but batch scripting isn't very friendly.
