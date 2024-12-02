@@ -36,9 +36,9 @@ It is (mostly) capable (you could write another program to start within batch), 
 
 ##### words.txt
 use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
-````
+```
 dement
 rumfustian
 tricuspidal
 duodecimal
-````
+```
