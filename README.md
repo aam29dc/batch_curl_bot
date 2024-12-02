@@ -1,18 +1,18 @@
-# batch curl bot
+## batch curl bot
 opens words.txt, shuffles the entries (using a .ps1 script), chooses a random search engine (out of the 4),
 and queries at the homepage. If last search engine is the same, it skips the homepage query.
 Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-limiting features, and check search engine anti-bot features.
 
-## search.bat
+### search.bat
 contains the script to query with curl
 
-## launch.bat
+### launch.bat
 launch 10 instances of search.bat
 
-## count.bat
+### count.bat
 count how many instances of cmd.exe you have running
 
-### response.log
+#### response.log
 ````
 200 1.407508s googlesearch?q=biurate 
 200 0.492720s yahoo 
