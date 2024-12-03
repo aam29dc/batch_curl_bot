@@ -136,7 +136,7 @@ for /f "delims=" %%a in (%file%) do (
 		call:curl duckduckgo !query!
 
         :: Update the referer for the next search engine
-        set referer="Referer: https://www.duckduckgo.com?q=!search!&ia=web"
+        set referer="Referer: https://www.duckduckgo.com/?q=!search!&ia=web"
 		set prev_engine=3
     )
 )
