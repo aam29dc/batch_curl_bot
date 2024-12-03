@@ -6,12 +6,15 @@ Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-l
 ### search.bat
 contains the script to query with curl
 <br>
+
 ### launch.bat
 launch 10 instances of search.bat
 <br>
+
 ### count.bat
 count how many instances of cmd.exe you have running
 <br>
+
 #### response.log
 ````
 200 1.407508s googlesearch?q=biurate 
@@ -34,6 +37,7 @@ This script could be refactored with a function and parameters, but batch script
 A better scripting language would to be to use .python or .powershell, but this was an attempt to learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.<br>
 It is (mostly) capable (you could write another program to start within batch), but error reporting from batch scripting isn't friendly either.<br>
 <br>
+
 ##### words.txt
 use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
 ````
@@ -43,10 +47,14 @@ tricuspidal
 duodecimal
 ````
 <br>
+
 #### comments on batch scripting:
 when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error
 <br>
+
 all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block
 <br>
+
 the else in a if and else control, the else must be paired with corresponding `)` from the previous if
 <br>
+
