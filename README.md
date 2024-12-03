@@ -14,20 +14,17 @@ count how many instances of cmd.exe you have running<br>
 
 #### response.log
 ````
-200 1.407508s googlesearch?q=biurate 
-200 0.492720s yahoo 
-200 1.014760s yahoosearch;?p=sulphostannide&fr=sfp&fr2=sb-top 
-200 0.418944s duckduckgo 
-200 0.609388s duckduckgo?q=imperium&ia=web 
-200 0.523881s yahoo 
-200 1.188855s yahoosearch;?p=hypocotyledonous&fr=sfp&fr2=sb-top 
-200 0.325176s google 
-200 1.073659s googlesearch?q=clawback 
-200 1.095745s googlesearch?q=welds 
-200 0.301782s bing 
-200 0.255166s bingsearch?q=dvornik 
-200 0.439573s yahoo 
-200 1.071123s yahoosearch;?p=scraggiest&fr=sfp&fr2=sb-top 
+200 0.290939s duckduckgo 
+200 0.507272s duckduckgo?q=loneliest&ia=web 
+200 0.281882s bing 
+200 0.316470s bingsearch?q=excandescent 
+200 0.335452s google 
+200 0.704805s googlesearch?q=paleocrystic 
+200 0.489618s yahoo 
+200 1.041893s yahoo?p=enduement&fr=sfp&fr2=sb-top 
+200 0.303396s google 
+200 0.655813s googlesearch?q=arteriopalmus 
+200 0.751769s googlesearch?q=chouses 
 ...
 ````
 This was to help learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.<br>
