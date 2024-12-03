@@ -45,3 +45,4 @@ duodecimal
 
 ##### comments on batch scripting:
 when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error
+<br>
