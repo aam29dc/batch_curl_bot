@@ -43,14 +43,11 @@ rumfustian
 tricuspidal
 duodecimal
 ````
-<br>
 
 #### comments on batch scripting:
 when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error
 <br>
-
 all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block
 <br>
-
 the else in a if and else control, the else must be paired with corresponding `)` from the previous if
 <br>
