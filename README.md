@@ -4,16 +4,13 @@ and queries at the homepage. If last search engine is the same, it skips the hom
 Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-limiting features, and check search engine anti-bot features.<br>
 
 ### search.bat
-contains the script to query with curl
-<br>
+contains the script to query with curl<br>
 
 ### launch.bat
-launch 10 instances of search.bat
-<br>
+launch 10 instances of search.bat<br>
 
 ### count.bat
-count how many instances of cmd.exe you have running
-<br>
+count how many instances of cmd.exe you have running<br>
 
 #### response.log
 ````
@@ -45,9 +42,7 @@ duodecimal
 ````
 
 #### comments on batch scripting:
-when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error
-<br>
-all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block
-<br>
+when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
+all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block<br>
 the else in a if and else control, the else must be paired with corresponding `)` from the previous if
 <br>
