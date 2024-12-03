@@ -38,6 +38,10 @@ tricuspidal
 duodecimal
 ````
 
+##### comments on how it can be improved
+Besides using a better scripting language like python, powershell, or bash. It can made to extract a link from the html file given a `<a href=` then go to that link, to make it appear more like a real person browsing.
+I didn't add time delays on purpose, but random time delays can help make it appear as a real person; sometimes a site might take long to ping and this can help add delays.
+
 #### comments on batch scripting:
 when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
 all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block<br>
