@@ -36,12 +36,12 @@ It is (mostly) capable (you could write another program to start within batch), 
 <br>
 ##### words.txt
 use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
-```
+````
 dement
 rumfustian
 tricuspidal
 duodecimal
-```
+````
 <br>
 #### comments on batch scripting:
 when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error
