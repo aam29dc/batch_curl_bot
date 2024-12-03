@@ -33,10 +33,7 @@ count how many instances of cmd.exe you have running
 200 1.071123s yahoosearch;?p=scraggiest&fr=sfp&fr2=sb-top 
 ...
 ````
-This script could be refactored with a function and parameters, but batch scripting isn't very friendly.<br>
-A better scripting language would to be to use .python or .powershell, but this was an attempt to learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.<br>
-It is (mostly) capable (you could write another program to start within batch), but error reporting from batch scripting isn't friendly either.<br>
-<br>
+This was to help learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.<br>
 
 ##### words.txt
 use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
@@ -57,4 +54,3 @@ all variables are global by default, use `setlocal` and `endlocal` to declare lo
 
 the else in a if and else control, the else must be paired with corresponding `)` from the previous if
 <br>
-
