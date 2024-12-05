@@ -13,7 +13,7 @@ launch 10 instances of search.bat<br>
 ### count.bat
 count how many instances of cmd.exe you have running<br>
 
-#### response.log
+#### response.log (effective url)
 ````
 200 0.400182s https://www.google.com/
 200 0.497333s https://www.google.com/search?q=unsensationally
@@ -49,7 +49,7 @@ Besides using a better scripting language like python, powershell, or bash. It c
 I didn't add time delays on purpose, but random time delays can help make it appear as a real person; sometimes a site might take long too ping and this can help add delays.
 
 #### comments on batch scripting:
-when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
-all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block<br>
-the else in a if and else control, the else must be paired with corresponding `)` from the previous if<br>
-calling a functions with a parameter that has an escaped character `^&` doesn't function well, and it was better to just pass the variable as a global instead<br>
+-when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
+-all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block<br>
+-the else in a if and else control, the else must be paired with corresponding `)` from the previous if<br>
+-calling a functions with a parameter that has an escaped character `^&` doesn't function well, and it was better to just pass the variable as a global instead<br>
