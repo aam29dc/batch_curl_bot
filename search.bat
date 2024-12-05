@@ -55,7 +55,7 @@ if not exist "shuffle.ps1" (
     exit /b
 )
 echo Shuffling %file% with shuffle.ps1, please wait...
-::powershell -ExecutionPolicy Bypass -File "shuffle.ps1" "%file%"
+powershell -ExecutionPolicy Bypass -File "shuffle.ps1" "%file%"
 echo Shuffle of %file% complete.
 echo.
 
