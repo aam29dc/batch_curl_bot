@@ -44,8 +44,10 @@ duodecimal
 ````
 
 ### comments on how it can be improved
--Besides using a better scripting language like python, powershell, or bash. It can be made to extract a link from the html file given a `<a href=` then go to that link, to make it appear more like a real person browsing.
+-Using a better scripting language like python, powershell, or bash. (Batch scripting is very unfriendly...)
+-Extract a link from the html file given a `<a href=` then go to that link, to make it appear more like a real person browsing.
 -Random time delays can help make it appear as a real person; sometimes a site might take long too ping and this can help add delays.
+-Visit random sites from a list like words.txt
 
 ### comments on batch scripting:
 -when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
