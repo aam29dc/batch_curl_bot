@@ -55,4 +55,4 @@ duodecimal
 -the `else` in a `if` and `else` control, the `else` must be paired with corresponding `)` from the previous `if`<br>
 -calling a functions with a parameter that has an escaped character `^&` doesn't function well, so it was better to just pass the variable as a global instead<br>
 
-###This was to help learn the cmd prompt at a higher level, and to learn the capabilities of legacy batch scripting.<br>
+### This was to help learn the cmd prompt at a higher level, and to learn the capabilities of legacy batch scripting.<br>
