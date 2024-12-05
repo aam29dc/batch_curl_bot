@@ -164,24 +164,24 @@ goto Main
 
 ::curl FUNCTION
 :curl
-
 ::setup search query string, if its a homepage or not
 if [%2]==[] ( set str=https://www.%1.com/
 ) else ( 
 	set query=!query:"=!
+	::yahoo has a different search string
 	if "%1" == "yahoo" ( set str=https://search.%1.com/!query!
 	) else ( set str=https://www.%1.com/!query! )
-	)
-	if %delay% neq 0 ( timeout /t %delay% /nobreak > nul )
-	for /f "delims=" %%b in ('curl -L -A %brow% -H %type% -H %enc% -H %lang% -H %ka% -H %sec% -H !referer! -H %te% -H %referer% -s -w "%%{http_code} %%{time_total}s %%{url_effective}\n" -o NUL !str!') do (
-		set result=%%b
+)
+	
+if %delay% neq 0 ( timeout /t %delay% /nobreak > nul )
 
-		echo !result!
-		
-		if /i "%logging%" == "Y" (
-			echo !result! >> response.log
-		)
+for /f "delims=" %%r in ('curl -L -A %brow% -H %type% -H %enc% -H %lang% -H %ka% -H %sec% -H !referer! -H %te% -H %referer% -s -w "%%{http_code} %%{time_total}s %%{url_effective}\n" -o NUL !str!') do (
+	echo %%r
+	
+	if /i "%logging%" == "Y" (
+		echo %%r >> response.log
 	)
+)
 
 goto:end
 ::curl END
