@@ -46,7 +46,7 @@ duodecimal
 ### comments on how it can be improved
 -Using a better scripting language like python, powershell, or bash. (Batch scripting is very unfriendly...)<br>
 -Extract a link from the html file given a `<a href=` then go to that link, to make it appear more like a real person browsing.<br>
--Random time delays can help make it appear as a real person; sometimes a site might take long too ping and this can help add delays.<br>
+-Random time delays can help make it appear as a real person; sometimes a site might take long to ping but this can help add random delays.<br>
 -Visit random sites from a list, like words.txt<br>
 
 ### comments on batch scripting:
