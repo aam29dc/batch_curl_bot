@@ -21,11 +21,11 @@ set prev_engine=
 :getfile
 set file=words.txt
 if not exist "%file%" (
-    echo %file% does not exist. Please enter the words filename: 
-    set /p file=
-    :: If the file still doesn't exist, prompt again
-    if not exist "%file%" (
-        goto getfile
+	echo %file% does not exist. Please enter the words filename: 
+	set /p file=
+	:: If the file still doesn't exist, prompt again
+	if not exist "%file%" (
+		goto getfile
     )
 )
 
@@ -50,9 +50,9 @@ set /p delay=
 ::SHUFFLE the words
 :: Check if shuffle.ps1 exists
 if not exist "shuffle.ps1" (
-    echo shuffle.ps1 does not exist.
-    pause
-    exit /b
+	echo shuffle.ps1 does not exist.
+	pause
+	exit /b
 )
 echo Shuffling %file% with shuffle.ps1, please wait...
 powershell -ExecutionPolicy Bypass -File "shuffle.ps1" "%file%"
@@ -63,14 +63,14 @@ echo.
 :Main
 :: Read the words.txt file line by line
 for /f "delims=" %%a in (%file%) do (
-    set search=%%a
+	set search=%%a
 	set query=
 	
     :: Recalculate random engine selection inside the loop
-    set /a random_engine=!random! %% 5
+	set /a random_engine=!random! %% 5
 
     :: Check which engine to use based on the random selection
-    if !random_engine! == 0 (
+	if !random_engine! == 0 (
 		if !prev_engine! neq 0 (
 			:: Perform the curl request for Google home
 			call:curl google
@@ -84,7 +84,7 @@ for /f "delims=" %%a in (%file%) do (
 		call:curl google q
 
         :: Update the referer for the next search engine
-        set referer="Referer: https://www.google.com/search?q=!search!"
+		set referer="Referer: https://www.google.com/search?q=!search!"
 		set prev_engine=0
 
     ) else if !random_engine! == 1 (
@@ -101,7 +101,7 @@ for /f "delims=" %%a in (%file%) do (
 		call:curl bing q
 
         :: Update the referer for the next search engine
-        set referer="Referer: https://www.bing.com/search?q=!search!"
+		set referer="Referer: https://www.bing.com/search?q=!search!"
 		set prev_engine=1
 
     ) else if !random_engine! == 2 (
@@ -118,7 +118,7 @@ for /f "delims=" %%a in (%file%) do (
 		call:curl yahoo q
 
         :: Update the referer for the next search engine
-        set referer="Referer: https://search.yahoo.com/search;?p=!search!&fr=sfp&fr2=sb-top"
+		set referer="Referer: https://search.yahoo.com/search;?p=!search!&fr=sfp&fr2=sb-top"
 		set prev_engine=2
 
     ) else if !random_engine! == 3 (
@@ -136,7 +136,7 @@ for /f "delims=" %%a in (%file%) do (
 		call:curl duckduckgo q
 
         :: Update the referer for the next search engine
-        set referer="Referer: https://www.duckduckgo.com/?q=!search!&ia=web"
+		set referer="Referer: https://www.duckduckgo.com/?q=!search!&ia=web"
 		set prev_engine=3
 		
     ) else if !random_engine! == 4 (
@@ -148,15 +148,15 @@ for /f "delims=" %%a in (%file%) do (
 			set referer="Referer: https://www.reddit.com/"
 		)
 
-        :: Perform the curl request for reddit
+		:: Perform the curl request for reddit
 		set query=search/?q=!search!
 
 		call:curl reddit q
 
-        :: Update the referer for the next search engine
-        set referer="Referer: https://www.reddit.com/search/?q=!search!"
+		:: Update the referer for the next search engine
+		set referer="Referer: https://www.reddit.com/search/?q=!search!"
 		set prev_engine=4
-    )
+	)
 )
 
 goto Main
