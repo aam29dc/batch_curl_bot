@@ -34,7 +34,7 @@
 ...
 ````
 
-##### words.txt
+### words.txt
 -use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
 ````
 dement
@@ -43,11 +43,11 @@ tricuspidal
 duodecimal
 ````
 
-##### comments on how it can be improved
+### comments on how it can be improved
 Besides using a better scripting language like python, powershell, or bash. It can made to extract a link from the html file given a `<a href=` then go to that link, to make it appear more like a real person browsing.
 I didn't add time delays on purpose, but random time delays can help make it appear as a real person; sometimes a site might take long too ping and this can help add delays.
 
-#### comments on batch scripting:
+### comments on batch scripting:
 -when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
 -all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block<br>
 -the else in a if and else control, the else must be paired with corresponding `)` from the previous if<br>
