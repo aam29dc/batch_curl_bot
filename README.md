@@ -1,4 +1,4 @@
-## batch curl bot
+## batch curl bot (2.3)
 -Opens words.txt, shuffles the entries (using a .ps1 script), chooses a random search engine (out of the 5),<br>
 -option to add a timed delay (seconds) between queries<br>
 -Simulates queries at the homepage. Each search term/word is different from the last.<br>
