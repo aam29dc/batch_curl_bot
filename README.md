@@ -15,17 +15,22 @@ count how many instances of cmd.exe you have running<br>
 
 #### response.log
 ````
-200 0.290939s duckduckgo 
-200 0.507272s duckduckgo?q=loneliest&ia=web 
-200 0.281882s bing 
-200 0.316470s bingsearch?q=excandescent 
-200 0.335452s google 
-200 0.704805s googlesearch?q=paleocrystic 
-200 0.489618s yahoo 
-200 1.041893s yahoo?p=enduement&fr=sfp&fr2=sb-top 
-200 0.303396s google 
-200 0.655813s googlesearch?q=arteriopalmus 
-200 0.751769s googlesearch?q=chouses 
+200 0.400182s https://www.google.com/
+200 0.497333s https://www.google.com/search?q=unsensationally
+200 1.218350s https://www.reddit.com/?rdt=63235
+200 0.751912s https://www.reddit.com/search/?q=neuroplexus&rdt=33506
+200 1.106301s https://www.yahoo.com/
+200 0.665023s https://search.yahoo.com/search;?p=intonaci
+200 0.870135s https://duckduckgo.com/
+200 0.450869s https://duckduckgo.com/?q=stroys
+200 1.596532s https://www.yahoo.com/
+200 0.640438s https://search.yahoo.com/search;?p=danaidean
+200 0.663445s https://www.reddit.com/?rdt=58853
+200 0.926733s https://www.reddit.com/search/?q=czarinian&rdt=62340
+200 1.575957s https://www.reddit.com/search/?q=rhinocerotidae&rdt=60038
+200 0.272790s https://www.bing.com/
+200 0.270424s https://www.bing.com/search?q=pomatum
+...
 ...
 ````
 This was to help learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.<br>
