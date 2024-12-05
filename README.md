@@ -50,9 +50,9 @@ duodecimal
 -Visit random sites from a list, like words.txt<br>
 
 ### comments on batch scripting:
--when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
+-when using `set` for declaring a variable don't use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
 -all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block<br>
--the else in a if and else control, the else must be paired with corresponding `)` from the previous if<br>
--calling a functions with a parameter that has an escaped character `^&` doesn't function well, and it was better to just pass the variable as a global instead<br>
+-the `else` in a `if` and `else` control, the `else` must be paired with corresponding `)` from the previous `if`<br>
+-calling a functions with a parameter that has an escaped character `^&` doesn't function well, so it was better to just pass the variable as a global instead<br>
 
-####This was to help learn the cmd prompt at a higher level, and to learn the capabilities of legacy batch scripting.<br>
+###This was to help learn the cmd prompt at a higher level, and to learn the capabilities of legacy batch scripting.<br>
