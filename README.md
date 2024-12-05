@@ -44,10 +44,10 @@ duodecimal
 ````
 
 ### comments on how it can be improved
--Using a better scripting language like python, powershell, or bash. (Batch scripting is very unfriendly...)
--Extract a link from the html file given a `<a href=` then go to that link, to make it appear more like a real person browsing.
--Random time delays can help make it appear as a real person; sometimes a site might take long too ping and this can help add delays.
--Visit random sites from a list like words.txt
+-Using a better scripting language like python, powershell, or bash. (Batch scripting is very unfriendly...)<br>
+-Extract a link from the html file given a `<a href=` then go to that link, to make it appear more like a real person browsing.<br>
+-Random time delays can help make it appear as a real person; sometimes a site might take long too ping and this can help add delays.<br>
+-Visit random sites from a list, like words.txt<br>
 
 ### comments on batch scripting:
 -when using `set` for declaring a variable dont use spaces before or after the `=`: `set var=Hello world` is correct, `set var = hello world` is an error<br>
@@ -55,4 +55,4 @@ duodecimal
 -the else in a if and else control, the else must be paired with corresponding `)` from the previous if<br>
 -calling a functions with a parameter that has an escaped character `^&` doesn't function well, and it was better to just pass the variable as a global instead<br>
 
-This was to help learn the cmd prompt at a higher level, and to learn the capabilities of legacy batch scripting.<br>
+####This was to help learn the cmd prompt at a higher level, and to learn the capabilities of legacy batch scripting.<br>
