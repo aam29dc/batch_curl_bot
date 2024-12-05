@@ -4,18 +4,13 @@ color 02
 
 :: VARIABLES
 :: Browser settings to simulate a real Firefox user
-set brow="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0"
-set type="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
-set enc="Accept-Encoding: gzip, deflate, br"
-set lang="Accept-Language: en-US,en;q=0.9"
+set brow="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
+set type="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+set enc="Accept-Encoding: gzip, deflate, br, zstd"
+set lang="Accept-Language: en-US,en;q=0.5"
 set ka="Connection: keep-alive"
 set sec="Upgrade-Insecure-Requests: 1"
 set te="TE: Trailers"
-:: Origin headers to simulate a real browser request
-set origin_google="Origin: https://www.google.com"
-set origin_bing="Origin: https://www.bing.com"
-set origin_yahoo="Origin: https://www.yahoo.com"
-set origin_duckduckgo="Origin: https://www.duckduckgo.com"
 :: Initial Referer (Starting with Google)
 set referer="Referer: https://www.google.com/"
 :: Initial prev_engine
@@ -56,7 +51,7 @@ if not exist "shuffle.ps1" (
     exit /b
 )
 echo Shuffling %file% with shuffle.ps1, please wait...
-powershell -ExecutionPolicy Bypass -File "shuffle.ps1" "%file%"
+::powershell -ExecutionPolicy Bypass -File "shuffle.ps1" "%file%"
 echo Shuffle of %file% complete.
 echo.
 
@@ -66,9 +61,9 @@ echo.
 for /f "delims=" %%a in (%file%) do (
     set search=%%a
 	set query=
-
+	
     :: Recalculate random engine selection inside the loop
-    set /a random_engine=!random! %% 4
+    set /a random_engine=!random! %% 5
 
     :: Check which engine to use based on the random selection
     if !random_engine! == 0 (
@@ -81,8 +76,8 @@ for /f "delims=" %%a in (%file%) do (
 		)
 
         :: Perform the curl request for Google search query
-		set query="search?q=!search!"
-		call:curl google !query!
+		set query=search?q=!search!
+		call:curl google q
 
         :: Update the referer for the next search engine
         set referer="Referer: https://www.google.com/search?q=!search!"
@@ -98,8 +93,8 @@ for /f "delims=" %%a in (%file%) do (
 		)
 
         :: Perform the curl request for Bing search query
-		set query="search?q=!search!"
-		call:curl bing !query!
+		set query=search?q=!search!
+		call:curl bing q
 
         :: Update the referer for the next search engine
         set referer="Referer: https://www.bing.com/search?q=!search!"
@@ -115,8 +110,8 @@ for /f "delims=" %%a in (%file%) do (
 		)
 
         :: Perform the curl request for Yahoo
-		set query="search;?p=!search!&fr=sfp&fr2=sb-top"
-		call:curl yahoo !query!
+		set query=search^;?p=!search!
+		call:curl yahoo q
 
         :: Update the referer for the next search engine
         set referer="Referer: https://search.yahoo.com/search;?p=!search!&fr=sfp&fr2=sb-top"
@@ -128,16 +123,35 @@ for /f "delims=" %%a in (%file%) do (
 			call:curl duckduckgo
 
 			:: Update the referer for search query
-			set referer="Referer: https://duckduckgo.com"
+			set referer="Referer: https://duckduckgo.com/"
 		)
 
         :: Perform the curl request for DuckDuckGo
-		set query="?q=!search!&ia=web"
-		call:curl duckduckgo !query!
+		set query=?q=!search!
+
+		call:curl duckduckgo q
 
         :: Update the referer for the next search engine
         set referer="Referer: https://www.duckduckgo.com/?q=!search!&ia=web"
 		set prev_engine=3
+		
+    ) else if !random_engine! == 4 (
+		if !prev_engine! neq 4 (
+			:: Perform the curl request for reddit home
+			call:curl reddit
+
+			:: Update the referer for search query
+			set referer="Referer: https://www.reddit.com/"
+		)
+
+        :: Perform the curl request for reddit
+		set query=search/?q=!search!
+
+		call:curl reddit q
+
+        :: Update the referer for the next search engine
+        set referer="Referer: https://www.reddit.com/search/?q=!search!"
+		set prev_engine=4
     )
 )
 
@@ -149,13 +163,13 @@ goto Main
 
 ::setup search query string, if its a homepage or not
 if [%2]==[] ( set str=https://www.%1.com/
-) else ( set str=https://www.%1.com/%2 )
-	for /f "delims=" %%b in ('curl -L -A %brow% -H %type% -H %enc% -H %lang% -H %ka% -H %sec% -H !referer! -H %te% -H %origin_google% -s -w "%%{http_code} %%{time_total}s %%{url_effective}\n" -o NUL %str%') do (
+) else ( 
+	set query=!query:"=!
+	if "%1" == "yahoo" ( set str=https://search.%1.com/!query!
+	) else ( set str=https://www.%1.com/!query! )
+	)
+	for /f "delims=" %%b in ('curl -L -A %brow% -H %type% -H %enc% -H %lang% -H %ka% -H %sec% -H !referer! -H %te% -H %referer% -s -w "%%{http_code} %%{time_total}s %%{url_effective}\n" -o NUL !str!') do (
 		set result=%%b
-		set result=!result:https://=!
-		set result=!result:search.=!
-		set result=!result:www.=!
-		set result=!result:.com/=!
 
 		echo !result!
 		
