@@ -1,17 +1,17 @@
 ## batch curl bot
-Opens words.txt, shuffles the entries (using a .ps1 script), chooses a random search engine (out of the 4),<br>
-Simulates queries at the homepage. Each search term/word is different from the last.<br>
-If last search engine is the same, it skips the homepage query.<br>
-Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-limiting features, and check search engine anti-bot features.<br>
+-Opens words.txt, shuffles the entries (using a .ps1 script), chooses a random search engine (out of the 5),<br>
+-Simulates queries at the homepage. Each search term/word is different from the last.<br>
+-If last search engine is the same, it skips the homepage query.<br>
+-Attempted to appear as if a real user is browsing, to self DoS, check ISP rate-limiting features, and check search engine anti-bot features.<br>
 
 ### search.bat
-contains the script to query with curl<br>
+-contains the script to query with curl<br>
 
 ### launch.bat
-launch 10 instances of search.bat<br>
+-launch 10 instances of search.bat<br>
 
 ### count.bat
-count how many instances of cmd.exe you have running<br>
+-count how many instances of cmd.exe you have running<br>
 
 #### response.log (effective url)
 ````
@@ -33,10 +33,9 @@ count how many instances of cmd.exe you have running<br>
 ...
 ...
 ````
-This was to help learn the cmd prompt at a higher level, and to learn the capabilities of batch scripting.<br>
 
 ##### words.txt
-use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
+-use your own entries, each word or line should be escaped (not comma seperated, use new lines for each entry), example:
 ````
 dement
 rumfustian
@@ -53,3 +52,5 @@ I didn't add time delays on purpose, but random time delays can help make it app
 -all variables are global by default, use `setlocal` and `endlocal` to declare local variables within a block<br>
 -the else in a if and else control, the else must be paired with corresponding `)` from the previous if<br>
 -calling a functions with a parameter that has an escaped character `^&` doesn't function well, and it was better to just pass the variable as a global instead<br>
+
+This was to help learn the cmd prompt at a higher level, and to learn the capabilities of legacy batch scripting.<br>
