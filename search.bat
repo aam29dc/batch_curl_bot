@@ -41,7 +41,11 @@ if /i "%logging%" == "Y" (
 ) else (
 	echo Unrecognized input.
 	goto :getlogging
-) 
+)
+
+::Time delay enable/disable
+echo Add a time delay between queries? (seconds):
+set /p delay=
 
 ::SHUFFLE the words
 :: Check if shuffle.ps1 exists
@@ -168,6 +172,7 @@ if [%2]==[] ( set str=https://www.%1.com/
 	if "%1" == "yahoo" ( set str=https://search.%1.com/!query!
 	) else ( set str=https://www.%1.com/!query! )
 	)
+	if %delay% neq 0 ( timeout /t %delay% /nobreak > nul )
 	for /f "delims=" %%b in ('curl -L -A %brow% -H %type% -H %enc% -H %lang% -H %ka% -H %sec% -H !referer! -H %te% -H %referer% -s -w "%%{http_code} %%{time_total}s %%{url_effective}\n" -o NUL !str!') do (
 		set result=%%b
 
