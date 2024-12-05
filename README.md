@@ -31,7 +31,6 @@
 200 0.272790s https://www.bing.com/
 200 0.270424s https://www.bing.com/search?q=pomatum
 ...
-...
 ````
 
 ##### words.txt
